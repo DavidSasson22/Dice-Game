@@ -10,8 +10,6 @@ export default class Player extends Component {
   }
 
   componentDidUpdate() {
-    console.log("Childupdated");
-    console.log(this.props);
   }
 
 
