@@ -72,7 +72,7 @@ export default class Board extends Component {
       }, 500);
     }
     else {
-      alert("Please insert a winning value at the bottom of the page, and than click on the 'NEW GAME' button");
+      alert("Please insert a number at the button below ('Point to win'), and set the number of points for winning the game. Than click the 'NEW GAME' button");
     }
   }
 
@@ -99,9 +99,6 @@ export default class Board extends Component {
         player1Active: 1,
       })
     }
-    else {
-      alert("You should role the dice at least once before click on the HOLD button")
-    }
   }
 
 
@@ -112,7 +109,7 @@ export default class Board extends Component {
       this.checkWinCon();
     }
     else {
-      alert("Please insert a winning value at the bottom of the page, and than click on the 'NEW GAME' button");
+      alert("Please insert a number at the button below ('Point to win'), and set the number of points for winning the game. Than click the 'NEW GAME' button");
     }
   }
 
