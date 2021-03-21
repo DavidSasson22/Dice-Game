@@ -21,12 +21,13 @@ export default class Board extends Component {
     playAble: false,
   }
 
+
   //Random function for the dice
   randomDice = () => Math.trunc(Math.random() * 6) + 1;
 
 
   //Set new values for dices
-  roleDice1 = async () => {
+  roleDice1 = () => {
     console.log();
     this.setState({
       dice1: this.randomDice(),
@@ -34,8 +35,9 @@ export default class Board extends Component {
     })
   }
 
+
   //Update player score, curront score, and passes the turn to other player according to game's rules
-  roleDice2 = async () => {
+  roleDice2 =  () => {
     if (this.state.player1Active === 1) {
       if (this.state.dice1 === this.state.dice2) {
         this.hold();
@@ -60,18 +62,20 @@ export default class Board extends Component {
     }
   };
 
+
   //Combines roleDice1 and roleDice2 in async way
   roleDice = async () => {
     if (this.state.playAble) {
-      await this.roleDice1();
+      this.roleDice1();
       setTimeout(() => {
         this.roleDice2();
       }, 500);
     }
     else {
-      alert("Please insert a winning value at the bottom of the page, and than click on the'START GAME' button");
+      alert("Please insert a winning value at the bottom of the page, and than click on the 'NEW GAME' button");
     }
   }
+
 
   //Update values and pass turn to other player
   hold1 = async () => {
@@ -100,6 +104,7 @@ export default class Board extends Component {
     }
   }
 
+
   //Call hold1 and than check if player won
   hold = async () => {
     if (this.state.playAble) {
@@ -107,9 +112,10 @@ export default class Board extends Component {
       this.checkWinCon();
     }
     else {
-      alert("Please insert a winning value at the bottom of the page, and than click on the'START GAME' button");
+      alert("Please insert a winning value at the bottom of the page, and than click on the 'NEW GAME' button");
     }
   }
+
 
   checkWinCon = () => {
     if (this.state.player2Score >= this.state.toWin) {
@@ -132,13 +138,11 @@ export default class Board extends Component {
     }
   }
 
+
   updatePointsToWin = (e) => {
     this.setState({ toWin: e.target.value });
   }
 
-  // disablePontsToWin = () => {
-  //   this.setState({input: true})
-  // }
 
   newGame = async () => {
     // await this.disablePontsToWin();
@@ -160,6 +164,7 @@ export default class Board extends Component {
       alert("You shoud set point's to win value at the bottom of the page before starting a new gane")
     }
   }
+
 
   render() {
     return (

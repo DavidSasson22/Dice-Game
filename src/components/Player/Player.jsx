@@ -2,16 +2,6 @@ import React, { Component } from 'react'
 import './playerStyle.css'
 
 export default class Player extends Component {
-  state = {
-    id: this.props.id,
-    score: this.props.score,
-    current: this.props.current,
-    active: this.props.active,
-  }
-
-  componentDidUpdate() {
-  }
-
 
   render() {
     return (
